@@ -46,7 +46,9 @@ public class Item : MonoBehaviour
     {
         CreateObject(out _CanvasUI, transform, "CanvasUI");
         _CanvasUI.AddComponent<Canvas>();
+        _CanvasUI.GetComponent<RectTransform>().anchoredPosition3D = new Vector3(0, 2, 0);
         _CanvasUI.GetComponent<RectTransform>().localScale = new Vector3(0.2f, 0.2f, 0.2f);
+
     }
 
     private void CreateTextUI()
