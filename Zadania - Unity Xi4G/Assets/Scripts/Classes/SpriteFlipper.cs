@@ -1,26 +1,24 @@
 ﻿using UnityEngine;
 
-public class SpriteFlipper : MonoBehaviour
+namespace Assets.Scripts
 {
-    [SerializeField] new Camera camera;
-
-    // Update is called once per frame
-    void Update()
+    public class SpriteFlipper : MonoBehaviour
     {
-
-        if (camera.WorldToScreenPoint(transform.position).x < Input.mousePosition.x)
+        void Update()
         {
-            gameObject.GetComponent<SpriteRenderer>().flipX = false;
 
-        }
-        if (camera.WorldToScreenPoint(transform.position).x > Input.mousePosition.x)
-        {
-            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+            if (gameObject.transform.GetChild(0).GetComponent<Camera>().WorldToScreenPoint(transform.position).x < Input.mousePosition.x)
+            {
+                gameObject.GetComponent<SpriteRenderer>().flipX = false;
 
+            }
+            if (gameObject.transform.GetChild(0).GetComponent<Camera>().WorldToScreenPoint(transform.position).x > Input.mousePosition.x)
+            {
+                gameObject.GetComponent<SpriteRenderer>().flipX = true;
+
+            }
         }
     }
-
-
 }
 
 

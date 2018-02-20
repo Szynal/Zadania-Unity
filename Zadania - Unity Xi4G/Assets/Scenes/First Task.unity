@@ -1353,12 +1353,12 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.036192417, y: -0.26296902}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1
 --- !u!4 &1842910337
 Transform:
   m_ObjectHideFlags: 0
@@ -1366,7 +1366,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1842910333}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.95, y: 7.27, z: 0}
+  m_LocalPosition: {x: 25.03, y: 6.97, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1466,6 +1466,7 @@ GameObject:
   - component: {fileID: 2033823452}
   - component: {fileID: 2033823455}
   - component: {fileID: 2033823453}
+  - component: {fileID: 2033823456}
   m_Layer: 8
   m_Name: Bird
   m_TagString: Player
@@ -1559,6 +1560,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 438955510}
+--- !u!61 &2033823456
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2033823451}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 1
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.18823564, y: 0.07925701}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.56, y: 1.57}
+    newSize: {x: 2.56, y: 1.57}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.6485431, y: 0.67835844}
+  m_EdgeRadius: 0
 --- !u!4 &2033823457
 Transform:
   m_ObjectHideFlags: 0
