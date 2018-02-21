@@ -392,6 +392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Background: {fileID: 2046035075}
+  _ItemColector: {fileID: 1539985253}
   _MaxCameraSize: 25
   _MinCameraSize: 8
 --- !u!1 &469828124

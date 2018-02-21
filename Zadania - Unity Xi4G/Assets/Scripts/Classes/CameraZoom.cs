@@ -5,6 +5,7 @@ namespace Assets.Scripts
     public class CameraZoom : MonoBehaviour
     {
         [SerializeField] private GameObject _Background;
+        [SerializeField] private GameObject _ItemColector;
         [SerializeField] public float _MaxCameraSize = 25.0f;
         [SerializeField] public float _MinCameraSize = 8.0f;
         private const float _Backgroundfactor = 0.3f;
@@ -19,7 +20,17 @@ namespace Assets.Scripts
                 gameObject.GetComponent<Camera>().orthographicSize--;
                 if (_Background.transform.localScale.x > 1)
                 {
-                    _Background.transform.localScale -= new Vector3(_Backgroundfactor, _Backgroundfactor, _Backgroundfactor);
+                    _Background.transform.localScale += new Vector3(_Backgroundfactor, _Backgroundfactor, _Backgroundfactor);
+
+                    if (_ItemColector.transform.childCount > 0)
+                    {
+                        for (int i = 0; i < FindObjectOfType<ItemCollecting>().CollectedItems.Length; i++)
+                        {
+                            _ItemColector.transform.GetChild(i).transform.position -= new Vector3(1.2f, 1f, 0);
+                        }
+                    }
+
+
                 }
             }
 
@@ -27,6 +38,13 @@ namespace Assets.Scripts
             {
                 gameObject.GetComponent<Camera>().orthographicSize++;
                 _Background.transform.localScale += new Vector3(_Backgroundfactor, _Backgroundfactor, _Backgroundfactor);
+                if (_ItemColector.transform.childCount > 0)
+                {
+                    for (int i = 0; i < FindObjectOfType<ItemCollecting>().CollectedItems.Length; i++)
+                    {
+                        _ItemColector.transform.GetChild(i).transform.position += new Vector3(1.2f, 1f, 0);
+                    }
+                }
             }
         }
     }
