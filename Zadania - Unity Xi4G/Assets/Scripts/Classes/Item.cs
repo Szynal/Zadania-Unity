@@ -11,9 +11,10 @@ namespace Assets.Scripts
     public class Item : MonoBehaviour
     {
         [SerializeField] private int _TextSize = 5;
-        [SerializeField] private string _Name;
+        [SerializeField] public string Name;
         private GameObject _TextUI;
         private GameObject _CanvasUI;
+
 
         // Use this for initialization
         void Start()
@@ -21,6 +22,7 @@ namespace Assets.Scripts
             CreateCanvasUI();
             CreateTextUI();
             SetCircleCollider();
+            gameObject.tag = "Item";
         }
 
         // Update is called once per frame
@@ -49,7 +51,7 @@ namespace Assets.Scripts
         {
             CreateObject(out _TextUI, _CanvasUI.transform, "TextUI");
             _TextUI.AddComponent<Text>();
-            _TextUI.GetComponent<Text>().text = _Name;
+            _TextUI.GetComponent<Text>().text = Name;
             _TextUI.GetComponent<Text>().transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
             _TextUI.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0.2f);
             _TextUI.GetComponent<Text>().fontSize = _TextSize;
@@ -64,5 +66,19 @@ namespace Assets.Scripts
             gameObject.GetComponent<CircleCollider2D>().isTrigger = true;
             gameObject.GetComponent<CircleCollider2D>().radius = 1.0f;
         }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            for (int i = 0; i < FindObjectOfType<ItemCollecting>().ItemsTypes.Count; i++)
+            {
+                if (gameObject.name == FindObjectOfType<ItemCollecting>().ItemsTypes[i].gameObject.name && collision.gameObject.tag == "Player")
+                {
+                    FindObjectOfType<ItemCollecting>().CollectedItems[i]++;
+                }
+
+            }
+            Destroy(gameObject);
+        }
+
     }
 }

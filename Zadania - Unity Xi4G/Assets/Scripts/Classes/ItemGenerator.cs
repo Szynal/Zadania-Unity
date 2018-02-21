@@ -10,8 +10,8 @@ namespace Assets.Scripts
 
         [SerializeField] private GameObject _Player;
         [Range(MinimalAmount, MaximumAmount)] [SerializeField] private int _MaxItemsQuantity = 5;
-        [SerializeField] private List<GameObject> _ItemList;
-
+        [SerializeField] public List<GameObject> _ItemList;
+        private GameObject item;
 
         private System.Random generator;
         private float _Width = 8.0f;
@@ -40,7 +40,8 @@ namespace Assets.Scripts
                 int randomValue = generator.Next(1, _MaxItemsQuantity);
                 for (int q = 0; q < randomValue; q++)
                 {
-                    Instantiate(_ItemList[i], new Vector3((Random.value * 2 - 1) * _Width, (Random.value * 2 - 1) * _Height, 0), Quaternion.identity, gameObject.transform);
+                    item = Instantiate(_ItemList[i], new Vector3((Random.value * 2 - 1) * _Width, (Random.value * 2 - 1) * _Height, 0), Quaternion.identity, gameObject.transform);
+                    item.name = _ItemList[i].name;
                 }
             }
         }
