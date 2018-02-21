@@ -92,6 +92,7 @@
     <Compile Include="Assets\Scripts\Classes\CursorFollow.cs" />
     <Compile Include="Assets\Scripts\Classes\CameraZoom.cs" />
     <Compile Include="Assets\Scripts\Classes\Item.cs" />
+    <Compile Include="Assets\Scripts\Classes\ItemGenerator.cs" />
     <Compile Include="Assets\Scripts\Classes\MenuManager.cs" />
     <Compile Include="Assets\Scripts\Classes\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Classes\Player.cs" />

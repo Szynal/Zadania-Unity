@@ -5,8 +5,8 @@ namespace Assets.Scripts
     public class CameraZoom : MonoBehaviour
     {
         [SerializeField] private GameObject _Background;
-        [SerializeField] private float _MaxCameraSize = 25.0f;
-        [SerializeField] private float _MinCameraSize = 8.0f;
+        [SerializeField] public float _MaxCameraSize = 25.0f;
+        [SerializeField] public float _MinCameraSize = 8.0f;
         private const float _Backgroundfactor = 0.3f;
         private float _ScrollWhell;
 

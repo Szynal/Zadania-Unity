@@ -10,9 +10,8 @@ namespace Assets.Scripts
     [RequireComponent(typeof(CircleCollider2D))]
     public class Item : MonoBehaviour
     {
-        [SerializeField] private int _Quantity;
+        [SerializeField] private int _TextSize = 5;
         [SerializeField] private string _Name;
-        [SerializeField] private int _TextSize;
         private GameObject _TextUI;
         private GameObject _CanvasUI;
 
