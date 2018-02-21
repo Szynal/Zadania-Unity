@@ -11,11 +11,14 @@ namespace Assets.Scripts
         /// <summary>Update is called once per frame </summary>
         void Update()
         {
-            if (Input.GetMouseButton(0) || Input.GetMouseButton(1))
+            if (!FindObjectOfType<PauseMenu>().Paused)
             {
-                _MousePosition = Input.mousePosition;
-                _MousePosition = Camera.main.ScreenToWorldPoint(_MousePosition);
-                transform.position = Vector2.Lerp(transform.position, _MousePosition, moveSpeed);
+                if (Input.GetMouseButton(0) || Input.GetMouseButton(1))
+                {
+                    _MousePosition = Input.mousePosition;
+                    _MousePosition = Camera.main.ScreenToWorldPoint(_MousePosition);
+                    transform.position = Vector2.Lerp(transform.position, _MousePosition, moveSpeed);
+                }
             }
         }
 

@@ -9,7 +9,7 @@ namespace Assets.Scripts
 
         public GameObject PauseUI;
 
-        private bool _Paused = true;
+        public bool Paused = true;
 
         // Use this for initialization
         void Start()
@@ -28,16 +28,18 @@ namespace Assets.Scripts
         {
             if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Delete))
             {
-                _Paused = !_Paused;
+                Paused = !Paused;
             }
 
-            if (_Paused)
+            if (Paused)
             {
+                Time.timeScale = 0;
                 PauseUI.SetActive(true);
             }
 
-            else if (!_Paused)
+            else if (!Paused)
             {
+                Time.timeScale = 1;
                 PauseUI.SetActive(false);
             }
         }
@@ -47,13 +49,12 @@ namespace Assets.Scripts
         {
             PauseUI.transform.GetChild(0).gameObject.SetActive(false);
             PauseUI.transform.GetChild(1).gameObject.SetActive(true);
-            _Paused = false;
-
+            Paused = false;
         }
 
         public void Resume()
         {
-            _Paused = false;
+            Paused = false;
         }
 
         public void MainMenu()
