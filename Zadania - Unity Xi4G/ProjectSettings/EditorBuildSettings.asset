@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/First Task.unity
     guid: 65494c1d151d1dc4fa24f1dc4bf6daa4
+  - enabled: 1
+    path: Assets/Scenes/SecondTask.unity
+    guid: 9757215e0b6f99e4c975bd208ff20ba6
