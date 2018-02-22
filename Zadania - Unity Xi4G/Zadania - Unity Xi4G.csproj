@@ -87,6 +87,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\BackToMenu.cs" />
     <Compile Include="Assets\Scripts\Classes\CameraZoom.cs" />
     <Compile Include="Assets\Scripts\Classes\CanvasZoom.cs" />
     <Compile Include="Assets\Scripts\Classes\CursorFollow.cs" />

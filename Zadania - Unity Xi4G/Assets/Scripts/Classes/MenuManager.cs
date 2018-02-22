@@ -14,7 +14,7 @@ namespace Assets.Scripts
         }
         public void StartSecondTask()
         {
-            //  SceneManager.LoadScene(2); // Zadanie nr 2 
+            SceneManager.LoadScene(2); // Zadanie nr 2 
         }
         /// <summary>
         /// Wyłączanie gry
