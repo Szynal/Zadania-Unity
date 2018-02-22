@@ -2,6 +2,9 @@
 
 namespace Assets.Scripts
 {
+    /// <summary>
+    /// Odwraca Sprita wzgledem położenia kursora myszy
+    /// </summary>
     public class SpriteFlipper : MonoBehaviour
     {
         void Update()

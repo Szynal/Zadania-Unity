@@ -2,9 +2,11 @@
 
 namespace Assets.Scripts
 {
+    /// <summary>
+    ///  włączanie i wyłączanie komponentu Renderer
+    /// </summary>
     public class ObjectDisable : MonoBehaviour
     {
-        /// <summary>Update is called once per frame </summary>
         void Update()
         {
             if (!FindObjectOfType<PauseMenu>().Paused)

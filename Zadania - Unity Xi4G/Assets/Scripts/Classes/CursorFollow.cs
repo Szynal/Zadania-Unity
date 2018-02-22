@@ -2,6 +2,9 @@
 
 namespace Assets.Scripts
 {
+    /// <summary>
+    /// Prosty mechanizm poruszania się za kursorem
+    /// </summary>
     [RequireComponent(typeof(SpriteFlipper))]
     public class CursorFollow : MonoBehaviour
     {
@@ -21,7 +24,10 @@ namespace Assets.Scripts
                 }
             }
         }
-
+        /// <summary>
+        /// Niszczenie przedmioty na który się najedzie ("zjadanie itemów")
+        /// </summary>
+        /// <param name="collision"></param>
         private void OnTriggerEnter2D(Collider2D collision)
         {
             Destroy(collision.gameObject);

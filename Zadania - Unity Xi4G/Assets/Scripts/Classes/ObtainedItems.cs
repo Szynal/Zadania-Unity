@@ -1,11 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Assets.Scripts
 {
+    /// <summary>
+    /// Tworzenie inventarza
+    /// </summary>
     public class ObtainedItems : MonoBehaviour
     {
         private GameObject _textModul;
@@ -25,10 +26,7 @@ namespace Assets.Scripts
 
         private void Update()
         {
-            for (int i = 0; i < FindObjectOfType<ItemGenerator>()._ItemList.Count; i++)
-            {
-                gameObject.transform.GetChild(i).GetChild(0).GetChild(0).GetComponent<Text>().text = FindObjectOfType<ItemGenerator>()._ItemList[i].name + " x" + FindObjectOfType<ItemCollecting>().CollectedItems[i];
-            }
+            UpdateText();
         }
 
 
@@ -61,6 +59,17 @@ namespace Assets.Scripts
             _TextUI.GetComponent<Text>().alignment = TextAnchor.MiddleCenter;
             RectTransform rectTextTransform = _TextUI.GetComponent<RectTransform>();
             rectTextTransform.sizeDelta = new Vector2(100, 50);
+        }
+
+        /// <summary>
+        /// Aktualizacja inwentarza (Zebrane itemy) 
+        /// </summary>
+        private void UpdateText()
+        {
+            for (int i = 0; i < FindObjectOfType<ItemGenerator>()._ItemList.Count; i++)
+            {
+                gameObject.transform.GetChild(i).GetChild(0).GetChild(0).GetComponent<Text>().text = FindObjectOfType<ItemGenerator>()._ItemList[i].name + " x" + FindObjectOfType<ItemCollecting>().CollectedItems[i];
+            }
         }
 
 

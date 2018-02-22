@@ -5,10 +5,20 @@ namespace Assets.Scripts
 {
     public class ItemGenerator : MonoBehaviour
     {
+        /// <summary>
+        /// Maksymalna możliwa liczba do ustalenia (Maksymalne występowanie  na scenie)
+        /// </summary>
         private const int MaximumAmount = 10;
+
+        /// <summary>
+        /// Minimalna możliwa liczba do ustalenia (Minimalne występowanie  na scenie)
+        /// </summary>
         private const int MinimalAmount = 1;
 
         [SerializeField] private GameObject _Player;
+        /// <summary>
+        /// Suwak dla designer 
+        /// </summary>
         [Range(MinimalAmount, MaximumAmount)] [SerializeField] private int _MaxItemsQuantity = 5;
         [SerializeField] public List<GameObject> _ItemList;
         private GameObject item;
@@ -30,7 +40,8 @@ namespace Assets.Scripts
                 Generator();
             }
         }
-
+        /// <summary>
+        /// Tworzy w losowej ilosci itemy, co najmniej jeden każdego rodzaju na losowej pozycji, ale ZAWSZE w polu widzenia kamery./// </summary>
         private void Generator()
         {
             generator = new System.Random();
@@ -45,7 +56,9 @@ namespace Assets.Scripts
                 }
             }
         }
-
+        /// <summary>
+        /// Aktualizacja zasięgu pojawiania się przedmiotu względem zoomowania 
+        /// </summary>
         private void ZoomItemPosition()
         {
 

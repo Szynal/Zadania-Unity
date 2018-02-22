@@ -4,6 +4,9 @@ using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts
 {
+    /// <summary>
+    /// Zatrzymuje grę w przypadku przyciśnięcia klawisza [DELETE] lub [ESCAPE]
+    /// </summary>
     public class PauseMenu : MonoBehaviour
     {
 
@@ -14,13 +17,7 @@ namespace Assets.Scripts
         // Use this for initialization
         void Start()
         {
-            PauseUI.SetActive(true);
-            PauseUI.transform.GetChild(0).gameObject.SetActive(true);
-            PauseUI.transform.GetChild(1).gameObject.SetActive(false);
-            PauseUI.transform.GetChild(2).gameObject.SetActive(true);
-            PauseUI.transform.GetChild(3).gameObject.SetActive(true);
-
-
+            SetActive();
         }
 
         // Update is called once per frame
@@ -35,7 +32,7 @@ namespace Assets.Scripts
             {
                 Time.timeScale = 0;
                 PauseUI.SetActive(true);
-                    
+
             }
 
             else if (!Paused)
@@ -45,37 +42,46 @@ namespace Assets.Scripts
             }
         }
 
-
+        /// <summary>
+        /// Dla przycisku Start
+        /// </summary>
         public void StartUI()
         {
             PauseUI.transform.GetChild(0).gameObject.SetActive(false);
             PauseUI.transform.GetChild(1).gameObject.SetActive(true);
             Paused = false;
         }
-
+        /// <summary>
+        /// Dla przycisku Resume 
+        /// </summary>
         public void Resume()
         {
             Paused = false;
         }
-
+        /// <summary>
+        /// Dla przycisku MainMenuz 
+        /// </summary>
         public void MainMenu()
         {
             SceneManager.LoadScene(0);
         }
 
-
+        /// <summary>
+        /// Dla przycisku Quit 
+        /// </summary>
         public void Quit()
         {
             Debug.Log("Quit the game!");
             Application.Quit();
         }
 
-        IEnumerator Enumerator()
+        private void SetActive()
         {
-            yield return new WaitForSeconds(15.0F);
-            PauseUI.transform.GetChild(7).gameObject.SetActive(false);
-            PauseUI.transform.GetChild(8).gameObject.SetActive(false);
-
+            PauseUI.SetActive(true);
+            PauseUI.transform.GetChild(0).gameObject.SetActive(true);
+            PauseUI.transform.GetChild(1).gameObject.SetActive(false);
+            PauseUI.transform.GetChild(2).gameObject.SetActive(true);
+            PauseUI.transform.GetChild(3).gameObject.SetActive(true);
         }
     }
 }

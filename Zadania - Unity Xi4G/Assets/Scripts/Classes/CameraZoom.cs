@@ -2,6 +2,9 @@
 
 namespace Assets.Scripts
 {
+    /// <summary>
+    /// Wdrożanie responsywności zoomowania oraz prostego mechanizmu oddalania/przybliżania kamery
+    /// </summary>
     public class CameraZoom : MonoBehaviour
     {
         [SerializeField] private GameObject _Background;
