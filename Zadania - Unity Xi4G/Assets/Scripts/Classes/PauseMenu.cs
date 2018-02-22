@@ -35,6 +35,7 @@ namespace Assets.Scripts
             {
                 Time.timeScale = 0;
                 PauseUI.SetActive(true);
+                    
             }
 
             else if (!Paused)

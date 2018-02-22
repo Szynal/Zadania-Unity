@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _TextSize: 5
-  _Name: Heart
+  Name: Heart
 --- !u!212 &212003824561335798
 SpriteRenderer:
   m_ObjectHideFlags: 1

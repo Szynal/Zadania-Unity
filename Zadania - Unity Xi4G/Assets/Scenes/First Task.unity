@@ -177,7 +177,7 @@ RectTransform:
   m_GameObject: {fileID: 227239952}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.00048828125}
-  m_LocalScale: {x: 0.999936, y: 0.999936, z: 0.999936}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 669689703}
   m_Father: {fileID: 559131864}
@@ -393,6 +393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Background: {fileID: 2046035075}
   _ItemColector: {fileID: 1539985253}
+  _PasueMenu: {fileID: 559131863}
   _MaxCameraSize: 25
   _MinCameraSize: 8
 --- !u!1 &469828124
@@ -711,7 +712,7 @@ RectTransform:
   m_GameObject: {fileID: 597574115}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.00024414062}
-  m_LocalScale: {x: 0.999936, y: 0.999936, z: 0.999936}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1990970543}
   m_Father: {fileID: 559131864}
@@ -1186,6 +1187,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1531734945}
   - component: {fileID: 1531734946}
+  - component: {fileID: 1531734948}
+  - component: {fileID: 1531734947}
   m_Layer: 0
   m_Name: ItemGenerator
   m_TagString: Untagged
@@ -1222,6 +1225,65 @@ MonoBehaviour:
   _ItemList:
   - {fileID: 1573131974181914, guid: 365f071860c05984e8c2da751ef746cd, type: 2}
   - {fileID: 1622892011717860, guid: 2cd6b341ffc4b4b469a472cacc414f7d, type: 2}
+--- !u!212 &1531734947
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1531734944}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+  m_MaskInteraction: 0
+--- !u!95 &1531734948
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1531734944}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1cc255621ef50154c826a660f193d836, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1539985253
 GameObject:
   m_ObjectHideFlags: 0
@@ -1447,6 +1509,8 @@ GameObject:
   - component: {fileID: 2033823453}
   - component: {fileID: 2033823456}
   - component: {fileID: 2033823458}
+  - component: {fileID: 2033823459}
+  - component: {fileID: 2033823460}
   m_Layer: 8
   m_Name: Bird
   m_TagString: Player
@@ -1592,6 +1656,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemsTypes: []
   CollectedItems: 
+--- !u!114 &2033823459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2033823451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c11761189b6ac1048b5b1b5471ac38af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &2033823460
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2033823451}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9cd3ebd2e48d5524c99581f81305d44b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &2046035075
 GameObject:
   m_ObjectHideFlags: 0

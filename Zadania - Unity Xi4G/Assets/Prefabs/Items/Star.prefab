@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _TextSize: 5
-  _Name: Star
+  Name: Star
 --- !u!212 &212205031585057518
 SpriteRenderer:
   m_ObjectHideFlags: 1

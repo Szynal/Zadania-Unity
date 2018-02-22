@@ -28,7 +28,16 @@ namespace Assets.Scripts
         // Update is called once per frame
         void Update()
         {
-
+            if (!FindObjectOfType<PauseMenu>().Paused)
+            {
+                gameObject.GetComponent<Renderer>().enabled = true;
+                _TextUI.SetActive(true);
+            }
+            else
+            {
+                gameObject.GetComponent<Renderer>().enabled = false;
+                _TextUI.SetActive(false);
+            }
         }
 
         private void CreateObject(out GameObject gameObject, Transform parent, String name)
